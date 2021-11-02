@@ -85,11 +85,7 @@ const compress = (to, from) => {
 
   // Check Path
   check(from, {
-    failed: uri => console.log(chalk.red(`TIP: from 路径不存在 ${uri}`))
-  });
-
-  check(to, {
-    failed: uri => console.log(chalk.red(`TIP: to 路径不存在 ${uri}`))
+    failed: uri => console.log(chalk.red(`TIP: from 目录不存在 ${uri}`))
   });
 
   // Zip
