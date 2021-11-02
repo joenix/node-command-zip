@@ -96,7 +96,7 @@ const compress = (to, from) => {
       });
 
     // Exit Process
-    process.exit(1);
+    process.exit();
   });
 };
 
