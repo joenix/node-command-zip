@@ -104,10 +104,9 @@ const compress = (to, from) => {
         console.log(chalk.red("TIP: 压缩失败"));
         console.error(error);
         reject(error);
-      });
-
-    // Exit Process
-    process.exit();
+      })
+      // Finally
+      .finally(() => process.exit());
   });
 };
 
