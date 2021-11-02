@@ -1,6 +1,6 @@
 {
   "name": "node-command-zip",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "node command zip",
   "main": "index.js",
   "bin": {
