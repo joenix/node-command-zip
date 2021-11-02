@@ -8,7 +8,7 @@ yarn add node-command-zip
 // package.json
 {
   "scripts": {
-    "zip": "node-zip --from=./src --to=./deploy/dist.zip"
+    "zip": "node-command-zip --from=./src --to=./deploy/dist.zip"
   },
 }
 ```
