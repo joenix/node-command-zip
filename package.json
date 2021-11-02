@@ -1,10 +1,10 @@
 {
   "name": "node-command-zip",
-  "version": "1.1.2",
+  "version": "1.2.3",
   "description": "node command zip",
   "main": "index.js",
   "bin": {
-    "node-zip": "index.js"
+    "node-command-zip": "index.js"
   },
   "author": "joenix",
   "license": "MIT",
