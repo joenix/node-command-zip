@@ -1,19 +1,19 @@
 #!/usr/bin/env node
 
 // Use File System
-const fs = require("fs");
+const fs = require('fs');
 
 // Use Path
-const path = require("path");
+const path = require('path');
 
 // Use Chalk
-const chalk = require("chalk");
+const chalk = require('chalk');
 
 // Use Compressing for Zip
-const compressing = require("compressing");
+const compressing = require('compressing-custom');
 
 // Use Cross-Env-Argv
-const argvs = require("cross-env-argv")(process);
+const argvs = require('cross-env-argv')(process);
 
 // Set Root
 const root = process.cwd(); // __dirname
@@ -27,7 +27,7 @@ const noop = () => {};
 // Set Read Path
 const read = uri => {
   // Get Group
-  const group = uri.split("/");
+  const group = uri.split('/');
 
   // Set Length
   const length = group.length - 1;
@@ -36,7 +36,7 @@ const read = uri => {
   const last = group[length];
 
   // Get Suffix
-  const suffix = last.split(".");
+  const suffix = last.split('.');
 
   // Set Suffix
   group.suffix = suffix.pop();
@@ -57,7 +57,7 @@ const refine = uri => {
   group.pop();
 
   // Export Dir
-  return group.join("/");
+  return group.join('/');
 };
 
 // Check Dir Existence
@@ -85,7 +85,7 @@ const compress = (to, from) => {
 
   // Check Path
   check(from, {
-    failed: uri => console.log(chalk.red(`TIP: from 目录不存在 ${uri}`))
+    failed: uri => console.log(chalk.red(`TIP: from 目录不存在 ${uri}`)),
   });
 
   // Zip
@@ -93,7 +93,19 @@ const compress = (to, from) => {
     // Use Compressing as Promise
     compressing.zip
       // Compress
-      .compressDir(from, to)
+      .compressDir(from, to, {
+        // Use Custom for Relative Path
+        custom(opts) {
+          // Set Exp
+          const exp = new RegExp(`^${from.match(/\w+$/).shift()}\/`);
+
+          // RegExp
+          opts.relativePath = opts.relativePath.replace(exp, '');
+
+          // Usage
+          return opts;
+        },
+      })
       // Success
       .then(() => {
         console.log(chalk.yellow(`TIP: 压缩完成，已压缩至目录【${to}】`));
@@ -101,7 +113,7 @@ const compress = (to, from) => {
       })
       // Error
       .catch(error => {
-        console.log(chalk.red("TIP: 压缩失败"));
+        console.log(chalk.red('TIP: 压缩失败'));
         console.error(error);
         reject(error);
       })
@@ -111,4 +123,4 @@ const compress = (to, from) => {
 };
 
 // Export as API
-compress("./deploy/dist.zip", "./dist");
+compress('./deploy/dist.zip', './dist');

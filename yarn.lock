@@ -60,10 +60,10 @@ color-name@~1.1.4:
   resolved "https://registry.yarnpkg.com/color-name/-/color-name-1.1.4.tgz#c2a09a87acbde69543de6f63fa3995c826c536a2"
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
 
-compressing@^1.5.1:
+compressing-custom@^1.5.1:
   version "1.5.1"
-  resolved "https://registry.yarnpkg.com/compressing/-/compressing-1.5.1.tgz#d031a3311b8c2ed6561a8431671d5a844540482d"
-  integrity sha512-1AGBR4Vh0/rpPKSXHoV9cerLo0CUlAhZ/xsJqU3a9+2cbSaFjWT3fk2MIGkCnbpk//DGWrcWw03rhKFQrA9RQw==
+  resolved "https://registry.yarnpkg.com/compressing-custom/-/compressing-custom-1.5.1.tgz#8b8cad458380a99e085723705a225f24761b7444"
+  integrity sha512-SZsLyQTPHPn1Kxj7iIQ+ylHAKfbmIVDpZxvTdoSlW1CM1uFOGE+Hj6q9bpouWrY3J5qiL7M01dg6KKTqYPIyow==
   dependencies:
     flushwritable "^1.0.0"
     get-ready "^1.0.0"
