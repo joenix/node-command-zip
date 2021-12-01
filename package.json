@@ -1,6 +1,6 @@
 {
   "name": "node-command-zip",
-  "version": "1.4.5",
+  "version": "1.4.6",
   "description": "node command zip",
   "main": "bin/zip.js",
   "bin": {
@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "chalk": "^4.1.2",
-    "compressing-custom": "^1.5.0",
+    "compressing-custom": "^1.5.1",
     "cross-env-argv": "^1.1.8"
   }
 }
