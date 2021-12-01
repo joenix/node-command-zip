@@ -97,7 +97,7 @@ const compress = (to, from) => {
         // Use Custom for Relative Path
         custom(opts) {
           // Set Exp
-          const exp = new RegExp(`^${from.match(/\w+$/).shift()}\/`);
+          const exp = new RegExp(`^${from.match(/\w+\/?$/).shift()}\/`);
 
           // RegExp
           opts.relativePath = opts.relativePath.replace(exp, '');
